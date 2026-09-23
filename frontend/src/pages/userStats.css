@@ -1,0 +1,241 @@
+.dashboard {
+  padding: 2rem;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  background: linear-gradient(180deg, #f8fbff 0%, #eef4ff 100%);
+  min-height: 100vh;
+}
+
+.header {
+  margin-bottom: 2rem;
+  background: rgba(255,255,255,0.94);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 20px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.06);
+}
+
+.header h1 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.04em;
+}
+
+.header p {
+  color: #475569;
+  font-size: 1rem;
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.empty-state {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #6b7280;
+}
+
+.applications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.application-card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.card-header h3 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.25rem;
+}
+
+.date {
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.status-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.card-details {
+  margin-top: 1rem;
+}
+
+.card-details p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.payments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.payments-table th,
+.payments-table td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.payments-table th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #6b7280;
+  background-color: #f9fafb;
+}
+
+.payments-table td {
+  font-size: 0.875rem;
+  color: #1a1a1a;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.25rem;
+  color: #6b7280;
+}
+/* Stats Cards Section */
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.stats-card {
+  display: flex;
+  align-items: center;
+  background: rgba(255,255,255,0.96);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  border-radius: 18px;
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.06);
+  padding: 1.2rem 1rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+  min-height: 110px;
+}
+
+.stats-card:hover {
+  box-shadow: 0 22px 40px rgba(15, 23, 42, 0.09);
+  transform: translateY(-2px);
+}
+
+.stats-icon {
+  font-size: 2rem;
+  margin-right: 1rem;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(37,99,235,0.12), rgba(96,165,250,0.12));
+}
+
+.stats-value {
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.04em;
+}
+
+.stats-label {
+  font-size: 0.9rem;
+  color: #475569;
+  margin-top: 0.15rem;
+  font-weight: 600;
+}
+
+.stats-approved .stats-value { color: #10b981; }
+.stats-pending .stats-value { color: #f59e0b; }
+.stats-rejected .stats-value { color: #ef4444; }
+.stats-payments .stats-value { color: #2563eb; }
+.stats-amount .stats-value { color: #0ea5e9; }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .applications-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    width: 100vw;
+  }
+
+  .payments-table th,
+  .payments-table td {
+    padding: 0.75rem;
+  }
+}
+
+/* Animation for status badges */
+.status-badge {
+  transition: all 0.2s ease-in-out;
+}
+
+.status-badge:hover {
+  transform: scale(1.05);
+}
+
+/* Hover effects for cards */
+.application-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.application-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
